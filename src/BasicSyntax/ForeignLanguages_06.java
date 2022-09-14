@@ -8,7 +8,7 @@ public class ForeignLanguages_06 {
         Scanner sc = new Scanner(System.in);
 
         String country = sc.nextLine();
-        String language = "";
+        String language;
         if(country.equals("England")||country.equals("USA")){
             language="English";
         }

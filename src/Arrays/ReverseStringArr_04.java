@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.Scanner;
 
-public class ReverseStringArr_03 {
+public class ReverseStringArr_04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

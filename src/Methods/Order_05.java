@@ -7,7 +7,7 @@ public class Order_05 {
         Scanner sc = new Scanner(System.in);
         String product = sc.nextLine();
         int quantity = Integer.parseInt(sc.nextLine());
-        System.out.println(makePrice(product,quantity));
+        System.out.printf("%.2f",makePrice(product,quantity));
     }
     public static double makePrice(String product, int quantity){
         double price = 0;

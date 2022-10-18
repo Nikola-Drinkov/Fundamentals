@@ -32,18 +32,17 @@ public class CardsGame_06 {
             }
         }
             if(firstHand.size()==0) {
-                int sum = 0;
-                for(int item:secondHand){
-                    sum+=item;
-                }
-                System.out.printf("Second player wins! Sum: %d",sum);
+                System.out.printf("Second player wins! Sum: %d",getSum(secondHand));
             }
         else {
-            int sum = 0;
-            for(int item:firstHand){
-                sum+=item;
-            }
-            System.out.printf("First player wins! Sum: %d",sum);
+            System.out.printf("First player wins! Sum: %d",getSum(firstHand));
         }
         }
+    public static int getSum(List<Integer> listCards){
+        int sum =0;
+        for(int item:listCards){
+            sum+=item;
+        }
+        return sum;
+    }
     }

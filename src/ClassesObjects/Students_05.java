@@ -33,6 +33,37 @@ public class Students_05 {
         public String getHometown() {
             return hometown;
         }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public void setAge(String age) {
+            this.age = age;
+        }
+
+        public void setHometown(String hometown) {
+            this.hometown = hometown;
+        }
+    }
+    private static boolean isStudentExisting(List<Student> studentsList,String firstName, String lastName){
+        for(Student student:studentsList){
+            if(student.getFirstName().equals(firstName)&&student.getLastName().equals(lastName))
+                return true;
+        }
+        return false;
+    }
+    private static Student getStudent(List<Student> studentsList, String firstName, String lastName){
+        Student existingStudent = null;
+        for(Student student:studentsList){
+            if(student.getFirstName().equals(firstName)&&student.getLastName().equals(lastName))
+                existingStudent=student;
+        }
+        return existingStudent;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -40,8 +71,17 @@ public class Students_05 {
         String input = sc.nextLine();
         while (!input.equals("end")){
             String [] currentStudent =  input.split(" ");
-            Student s = new Student(currentStudent[0],currentStudent[1],currentStudent[2],currentStudent[3]);
-            studentsList.add(s);
+            if(!isStudentExisting(studentsList,currentStudent[0],currentStudent[1])){
+                Student s = new Student(currentStudent[0],currentStudent[1],currentStudent[2],currentStudent[3]);
+                studentsList.add(s);
+            }
+            else {
+                Student student = getStudent(studentsList,currentStudent[0],currentStudent[1]);
+                student.setFirstName(currentStudent[0]);
+                student.setLastName(currentStudent[1]);
+                student.setAge(currentStudent[2]);
+                student.setHometown(currentStudent[3]);
+            }
             input= sc.nextLine();
         }
         String city = sc.nextLine();
